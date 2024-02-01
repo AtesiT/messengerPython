@@ -17,15 +17,10 @@ class AnyDialog:
 
 class UpperPartMesssenger:
     def __init__(self):
-        settings = ttk.Button(text="Settings", command=self.settings())
+        settings = ttk.Button(text="Settings", command=settings_meggenser.settings)
         settings.grid(row=0,column=0)
         profile = ttk.Button(text="Profile")
         profile.grid(row=0,column=2)
-
-    def settings(self):
-        settings = Tk()
-        settings.title("Messenger")
-        settings.geometry("350x600")
 
 class BottomPartMesssenger:
     def __init__(self):
