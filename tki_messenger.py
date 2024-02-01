@@ -3,23 +3,43 @@ from tkinter import ttk
 
 root = Tk()
 root.title("Messenger")
-root.geometry("360x640")
+root.geometry("350x600")
 
 class AnyDialog:
     def __init__(self, name, text, time):
         name = ttk.Label(text=f"{name}", font=("Century Gothic", 10))
-        name.pack()
+        name.grid(row=1,column=0)
         text = ttk.Label(text=f"{text}", font=("Century Gothic", 14))
-        text.pack()
+        text.grid(row=1,column=1)
         time = ttk.Label(text=f"{str(time)}", font=("Century Gothic", 10))
-        time.pack()
+        time.grid(row=1,column=2)
 
 class UpperPartMesssenger:
-    pass
+    def __init__(self):
+        settings = ttk.Button(text="Settings")
+        settings.grid(row=0,column=0)
+        profile = ttk.Button(text="Profile")
+        profile.grid(row=0,column=2)
 
 class BottomPartMesssenger:
-    pass
+    def __init__(self):
+        ttk.Entry().grid(row=2,column=0, columnspan=2, stick='we')
+        ttk.Button(text='SEND').grid(row=2,column=2)
+
+class BottomToolbar:
+    def __init__(self):
+        settings = ttk.Button(text="ADD")
+        settings.grid(row=3,column=0, stick='we')
+        profile = ttk.Button(text="UPLOAD MESSAGES")
+        profile.grid(row=3,column=1, stick='we')
+        settings = ttk.Button(text="BACKUP")
+        settings.grid(row=3,column=2, stick='we')
 
 
-first_dialog = AnyDialog('Alice', 'Hi, How\'s going on?', 20)
+
+UpperPartMesssenger()
+first_dialog = AnyDialog('Alice', 'Hi, How\'s going on?', '14:17')
+BottomPartMesssenger()
+BottomToolbar()
+
 root.mainloop()
