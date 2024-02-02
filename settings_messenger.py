@@ -32,5 +32,4 @@ def settings():
     btn6.pack(fill='x', expand=False, padx=x, pady=y+50, ipady=y, anchor="center")
 
 
-    settings.mainloop()
 

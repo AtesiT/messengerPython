@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
-import settings_meggenser
+import settings_messenger
+import profile_messenger
 
 root = Tk()
 root.title("Messenger")
@@ -17,9 +18,9 @@ class AnyDialog:
 
 class UpperPartMesssenger:
     def __init__(self):
-        settings = ttk.Button(text="Settings", command=settings_meggenser.settings)
+        settings = ttk.Button(text="Settings", command=settings_messenger.settings)
         settings.grid(row=0,column=0)
-        profile = ttk.Button(text="Profile")
+        profile = ttk.Button(text="Profile", command=profile_messenger.profile)
         profile.grid(row=0,column=2)
 
 class BottomPartMesssenger:
