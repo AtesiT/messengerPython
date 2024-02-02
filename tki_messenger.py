@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 import settings_messenger
 import profile_messenger
+import createNewDialog_messenger
 
 root = Tk()
 root.title("Messenger")
@@ -32,7 +33,7 @@ class BottomToolbar:
     def __init__(self):
         settings = ttk.Button(text="MUSIC")
         settings.grid(row=3,column=0, stick='we')
-        profile = ttk.Button(text="UPLOAD MESSAGES")
+        profile = ttk.Button(text="CREATE NEW DIALOG", command=createNewDialog_messenger.newDialog)
         profile.grid(row=3,column=1, stick='we')
         settings = ttk.Button(text="BACKUP")
         settings.grid(row=3,column=2, stick='we')

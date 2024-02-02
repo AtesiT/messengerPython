@@ -1,15 +1,19 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import OK, INFO, showinfo
+import random
 
 def profile():
     profile = Tk()
     profile.title("Messenger")
     profile.geometry("350x600")
 
+    createRandomKey = lambda: int(round(random.random(), 10) * 10000000000)
+
     def takeKey():
-        showinfo(title="Messenger", message="Ключ для связи с собеседником создан",
-                 detail="Отправьте собеседнику для создания диалога с ним: qw1v6tmshy4",
+        showinfo(title="Messenger",
+                 message="Ключ для установления связи с новым собеседником будет доступен в течении минуты",
+                 detail=f"Отправьте собеседнику для создания диалога с ним: {(createRandomKey())}",
                  icon=INFO, default=OK)
 
     title = ttk.Label(profile, text="Your profile", font=("Century Gothic", 16))
